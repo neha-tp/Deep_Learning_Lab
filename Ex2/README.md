@@ -1,6 +1,8 @@
-# Experiment 2: Multi-Layer Perceptron (MLP) for Multi-Class Image Classification
+# Experiment 2: Multi-Layer Perceptron (MLP) for Multi-Class Classification and XOR Problem
 
-This folder contains the implementation of a **Multi-Layer Perceptron (MLP)** using **TensorFlow/Keras** for image classification. The model is trained, evaluated, and optimized on the **Fashion-MNIST dataset** to classify fashion articles into 10 categories. Automated hyperparameter tuning is executed using `RandomizedSearchCV` via the `SciKeras` wrapper.
+This folder contains two main sets of experiments with Multi-Layer Perceptrons:
+1. **Fashion-MNIST Classification**: Implementation of an MLP using **TensorFlow/Keras** for image classification. The model is trained, evaluated, and optimized on the **Fashion-MNIST dataset** to classify fashion articles into 10 categories, featuring automated hyperparameter tuning using `RandomizedSearchCV` via the `SciKeras` wrapper.
+2. **XOR Problem Investigation**: Implementation of a Single-Layer Perceptron and a custom Multi-Layer Perceptron (MLP) from scratch using NumPy to solve the non-linearly separable **XOR gate** problem.
 
 ---
 
@@ -23,6 +25,18 @@ The model utilizes the **Fashion-MNIST** dataset:
   8. `Sneaker`
   9. `Bag`
   10. `Ankle Boot`
+
+---
+
+## XOR Gate Experiments
+
+Beyond image classification, this folder contains a study of the classic non-linearly separable **XOR gate** problem, comparing single-layer vs multi-layer perceptron models:
+1. **Single-Layer Perceptron (SLP) failure**: A custom perceptron is implemented from scratch to show that it fails to converge on the non-linearly separable XOR problem.
+2. **Multi-Layer Perceptron (MLP) from scratch**: A custom MLP is built in pure NumPy with:
+   - **Input layer**: 2 nodes
+   - **Hidden layer**: 4 nodes (using Tanh activation function)
+   - **Output layer**: 1 node (using Sigmoid activation function)
+   - **Training**: Custom backpropagation training demonstrating perfect convergence on the XOR truth table.
 
 ---
 
@@ -127,3 +141,5 @@ The notebook outputs comprehensive diagnostic plots:
 * **Hyperparameter Search Performance:** Line plot tracking CV accuracy across search iterations.
 * **Optimized Model evaluations:** Confusion matrix (Greens palette) and classification report for the tuned network.
 * **Comparison Bar Chart:** Visual comparison of final test accuracy between baseline and optimized models.
+* **XOR Single-Layer Perceptron Error History:** Visualizes the error rate over iterations to show lack of convergence.
+* **XOR Multi-Layer Perceptron Convergence:** Visualizes the error decay showing successful learning of the XOR logic function.

@@ -1,6 +1,8 @@
-# Experiment 1: Single Layer Perceptron for Binary Classification
+# Experiment 1: Single Layer Perceptron for Binary Classification and Logic Gates
 
-This folder contains the implementation of a **Single Layer Perceptron** from scratch using the classical perceptron learning rule and a step activation function. The model is trained and evaluated on the **Banknote Authentication Dataset** to classify banknotes as genuine or forged.
+This folder contains two implementations of a **Single Layer Perceptron** from scratch using the classical perceptron learning rule and a step activation function:
+1. **Banknote Authentication Classification**: A model trained and evaluated on the **Banknote Authentication Dataset** to classify banknotes as genuine or forged.
+2. **Logic Gates Simulation**: Perceptron models trained to simulate basic logical operations: **AND**, **OR**, and **NOT** gates.
 
 ---
 
@@ -21,6 +23,17 @@ The **Banknote Authentication Dataset** is obtained from the **UCI Machine Learn
 5. **Class** (binary target): 
    * `0`: Genuine Banknote
    * `1`: Forged Banknote
+
+---
+
+## Logic Gates Simulation
+
+In addition to banknote classification, the Perceptron class is used to model basic logical operators:
+* **AND Gate**: Implemented with inputs `[[0,0], [0,1], [1,0], [1,1]]` and targets `[0, 0, 0, 1]`.
+* **OR Gate**: Implemented with inputs `[[0,0], [0,1], [1,0], [1,1]]` and targets `[0, 1, 1, 1]`.
+* **NOT Gate**: Implemented with inputs `[[0,0], [1,0]]` and targets `[1, 0]`.
+
+The Perceptron updates its weights and bias iteratively, outputting convergence information and final parameters for each logical gate.
 
 ---
 
@@ -67,10 +80,6 @@ You can run the notebook either **locally** or in **Google Colab**.
 4. **Adjust the Dataset Path:**
    Open `Ex1.ipynb` in your editor or Jupyter. In the third code cell, update the dataset path to read the local copy in the same directory:
    ```python
-   # Original:
-   # path = "/content/drive/MyDrive/DL Lab/ex1/data_banknote_authentication.txt"
-   
-   # Updated for local run:
    path = "data_banknote_authentication.txt"
    ```
 
